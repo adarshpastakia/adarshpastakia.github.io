@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+{% assign tag = site.data.tags[page.tag] %}
+
+<div id="main">
+  <div id="content" class="container">
+    <div class="row">
+      <section class="8u -2u">
+        <!-- <a href="{{ site.prefix }}{{ page.url }}" class="image full"><img src="/assets/{{ page.featured }}" alt=""></a> -->
+        <header>
+          <h2>{{ tag.name }}<small>{{ tag.description | markdownify }}</small></h2>
+        </header>
+        <div class="post-by-tag">
+        {% if site.tags[page.tag] %}
+          {% for post in site.tags[page.tag] %}
+            {% assign currentdate = post.date | date: "%Y" %}
+            {% if currentdate != date %}
+              {% unless forloop.first %}</ul><hr/>{% endunless %}
+              <h2 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
+              <ul class="default ">
+              {% assign date = currentdate %}
+            {% endif %}
+            <li>
+              <h4>
+                <a href="{{ post.url | prepend:site.baseurl }}">
+                  <span>{{ post.title }}</span>
+                  <small>{{ post.date | date: "%m/%d" }}</small>
+                </a>
+              </h4>
+            </li>
+            {% if forloop.last %}</ul><hr/>{% endif %}
+          {% endfor %}
+        {% else %}
+            <p>There are no posts for this tag.</p>
+        {% endif %}
+      </div>
+      </section>
+    </div>
+  </div>
+</div>
