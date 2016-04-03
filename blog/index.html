@@ -11,10 +11,13 @@ layout: default
 				<section class="8u -2u">
 					<!-- <a href="{{ site.prefix }}{{ post.url }}" class="image full"><img src="/assets/{{ post.featured }}" alt=""></a> -->
 					<header>
-						<h2>{{ post.title }}</h2>
+						<h3>{{ post.title }}</h3>
+						<div class="post-date">
+					    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m/%d/%y" }}</time>
+					  </div>
 					</header>
-					{{ post.excerpt }}
-					<a href="{{ site.prefix }}{{ post.url }}" class="button button-style1">Read More</a>
+					<div class="post-excerpt">{{ post.excerpt }}</div>
+					<a href="{{ site.prefix }}{{ post.url }}" class="button button-style5">Read More</a>
 				</section>
 			</div>
 			{% endfor %}

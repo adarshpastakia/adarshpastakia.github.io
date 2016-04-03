@@ -807,7 +807,6 @@
 
 		#logo h1
 		{
-			color: #FFF;
 			text-shadow: 0 4px 4px DimGray;
 		}
 
@@ -1046,6 +1045,16 @@ h2 > small {
 	font-size: 50%;
 	color: dimgray;
 }
+h3 {
+	font-weight: 600;
+	font-size: 1.3em;
+	line-height: 1.2em;
+}
+h3 > small {
+	display: block;
+	font-size: 50%;
+	color: dimgray;
+}
 a > small {
 	font-size: 75%;
 	color: dimgray;
@@ -1059,6 +1068,26 @@ a > small {
 .post-body h3 {
 	font-size: 1.5em;
 	margin: 0.5em 0;
+}
+.post-body hr {
+	margin: 0.3em 0;
+	padding: 0;
+}
+.post-excerpt {
+	padding: 1em 0;
+}
+
+.button.button-style5 {
+	background: none;
+	padding: 0.3em 0;
+	font-size: 1.1em;
+	color: #80BA8E !important;
+}
+.button.button-style5:after {
+	content: '...';
+}
+.button.button-style5:hover {
+	color: #70AA7E !important;
 }
 
 code, tt {
@@ -1101,3 +1130,15 @@ pre code, pre tt {
   background-color: transparent;
   border: none;
 }
+
+.post-body blockquote {
+	margin: 1em 0;
+	padding: 0.3em 1em;
+	background: rgba(225, 0, 10, 0.1);
+	color: #CC364A;
+	border: 1px solid #CC364A;
+}
+
+.post-body	blockquote > p {
+		margin: 0;
+	}
