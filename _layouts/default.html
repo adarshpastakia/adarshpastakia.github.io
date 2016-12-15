@@ -1,80 +1,102 @@
-<!DOCTYPE HTML>
-<!--
-Linear by TEMPLATED
-templated.co @templatedco
-Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
-<head>
-	<title>{{page.title}} - Adarsh Pastakia</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,800italic,400,300,600,800' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="/assets/js/skel.min.js"></script>
-	<script src="/assets/js/skel-panels.min.js"></script>
-	<script src="/assets/js/init.js"></script>
-	<noscript>
-		<link rel="stylesheet" href="/assets/css/skel-noscript.css" />
-	</noscript>
-	<link rel="stylesheet" href="/assets/css/style.css" />
-</head>
-<body>
+  <head lang="en">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  	<meta name="description" content="" />
+  	<meta name="keywords" content="" />
+    
+  	<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,800italic,400,300,600,800' rel='stylesheet' type='text/css'>
+  	<link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+  	
+    <!-- Semantic UI -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    
+    <title>{{page.title}} - {{site.name}}</title>
+    <script>
+  $(document)
+    .ready(function() {
 
-	<!-- Header -->
-	<div id="header">
-		{% include nav.html %}
-		<div class="container">
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
 
-			<!-- Logo -->
-			<div id="logo">
-				<h1><a href="#">Adarsh Pastakia</a></h1>
-				<span class="tag">An Earth Bound Misfit</span>
-			</div>
-		</div>
-	</div>
-	<!-- Header -->
-	{{ content }}
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item');
 
-	<!-- Tweet -->
-	<div id="tweet">
-		<div class="container">
-			<section>
-				<blockquote>&ldquo;All you touch and all you see, is all your life will ever be&rdquo;<footer>- Pink Floyd</footer></blockquote>
-			</section>
-		</div>
-	</div>
+    });
+  </script>
+  </head>
+  <body class="pushable">
+    <div class="ui large top fixed menu inverted transition hidden">
+      <div class="ui container">
+        <div class="header item">
+          <div>
+          <h1>{{site.name}}</h1>
+          <h2>{{site.description}}</h2>
+        </div>
+        </div>
+        <div class="right menu">
+          {% include nav.html %}
+        </div>
+      </div>
+    </div>
+    
+    <div class="ui vertical inverted sidebar menu left">
+      {% include nav.html %}
+    </div>
+    
+    <div class="pusher">
+      <div class="ui inverted vertical masthead center aligned segment">
+      
+        <div class="ui container section-menu">
+          <div class="ui large secondary inverted pointing menu">
+            <a class="toc item">
+              <i class="sidebar icon"></i>
+            </a>
+            {% include nav.html %}
+          </div>
+        </div>
+      
+        <div class="ui container">
+          <h1 class="ui inverted header">{{site.name}}</h1>
+          <h2>{{site.description}}</h2>
+        </div>
+      
+      </div>
+      
+      <div class="page-body">
+      
+      {{ content }}
+      
+      </div>
+      
+      <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid centered">
+            <div class="seven wide column">
+              <h4 class="ui inverted header">This site was built using <a href="//semantic-ui.com/">Sematic-UI</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
-
-<!-- Footer -->
-<div id="footer">
-	<div class="container">
-		<section>
-			<header>
-				<h2>Get in touch</h2>
-				<span class="byline"></span>
-			</header>
-			<ul class="contact">
-				<!-- <li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-				<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-				<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
-				<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li> -->
-				<li><a href="//github.com/adarshpastakia" class="fa fa-github"><span>GitHub</span></a></li>
-				<li><a href="mailto:adarshpastakia@outlook.com" class="fa fa-envelope"><span>E-Mail</span></a></li>
-			</ul>
-		</section>
-	</div>
-</div>
-
-<!-- Copyright -->
-<div id="copyright">
-	<div class="container">
-		Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
-		Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a>
-	</div>
-</div>
-
-</body>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="//buttons.github.io/buttons.js"></script>
+  </body>
 </html>

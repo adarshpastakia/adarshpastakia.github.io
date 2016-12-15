@@ -1,3 +1,8 @@
 name: Adarsh Pastakia
-description: Linear template for Jekyll
+description: A Developer's Blog
+
 paginate: 10
+gems: [jekyll-paginate]
+
+sass:
+    sass_dir: _sass

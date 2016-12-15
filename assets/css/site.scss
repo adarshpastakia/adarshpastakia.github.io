@@ -1,0 +1,130 @@
+--- 
+# this ensures Jekyll reads the file to be transformed into CSS later 
+# only Main files contain this front matter, not partials. 
+---
+
+// 
+// @description : 
+// @author      : Adarsh Pastakia
+// @copyright   : 2017
+// @license     : MIT
+
+$primary: #3E1B3E;
+$secondary: #9E0F59;
+
+$white: #FFFEFC;
+$black: #1B1C1D;
+
+body.pushable,
+html {
+  background: $black !important;
+  font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif !important;
+
+  > div.pusher {
+    background: $black;
+  }
+
+  a {
+    color: saturate($secondary, 30%);
+    
+    &:hover {
+      color: $secondary;
+    }
+  }
+  
+  .thin {
+    font-weight: 300;
+  }
+}
+
+.text-muted {
+  color: #808080;
+}
+
+.masthead.inverted.segment {
+  padding   : 0 0 1em 0;
+  background: $black url(../images/code2.png) no-repeat center center;
+  background-size: cover;
+
+  .ui.container.section-menu {
+    background: rgba($black, .8);
+  }
+  .ui.container {
+    background: rgba($black, .3);
+  }
+  h1.ui.header {
+    font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+    padding     : 2rem 0 0;
+    font-size  : 4em;
+    font-weight: 300;
+    text-shadow: 2px 2px 2px $black, -2px -2px 2px $black;
+  }
+
+  h2 {
+    font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+    padding     : .5em 0 2rem;
+    font-size  : 2em;
+    font-weight: 300;
+    text-shadow: 2px 2px 2px $black, -2px -2px 2px $black;
+  }
+}
+.page-body {
+  background: $white;
+  min-height: 500px;
+}
+.secondary.pointing.menu .toc.item {
+  display: none;
+}
+
+.ui.menu.inverted {
+  background: $primary;
+  
+  .header.item h1 {
+    font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 0;
+  }
+  .header.item h2 {
+    font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.footer.segment {
+  h4.ui.inverted.header {
+    color: #888;
+    text-align: center;
+    padding: 1em 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .ui.fixed.menu {
+    //display: none !important;
+  }
+
+  .secondary.pointing.menu .item,
+  .secondary.pointing.menu .menu {
+    //display: none;
+  }
+
+  .secondary.pointing.menu .toc.item {
+    //display: block;
+  }
+
+  .masthead.inverted.segment {
+
+    h1.ui.header {
+      font-size : 2em;
+      padding-top: 1em;
+    }
+
+    h2 {
+      padding-bottom: 1em;
+      font-size    : 1.2em;
+    }
+  }
+}
