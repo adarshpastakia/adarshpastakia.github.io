@@ -15,22 +15,15 @@ layout: default
 	{% assign tags_content = '' %}
 {% endif %}
 <!-- Main -->
-	<div id="main">
-		<div id="content" class="container">
-			<div class="row">
-				<section class="8u -2u">
-					<!-- <a href="{{ site.prefix }}{{ page.url }}" class="image full"><img src="/assets/{{ page.featured }}" alt=""></a> -->
-					<header style="margin:0">
-						<h2>{{ page.title }}</h2>
-						<div class="post-date">
-					    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%m/%d/%y" }}</time>
-					    <span>{{ tags_content }}</span>
-					  </div>
-					</header>
-					<div class="post-body">
-					{{ content }}
-				</div>
-				</section>
-			</div>
-		</div>
+	<div class="ui container post-detail">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="meta">
+      Posted on &#x1F558; <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    </div>
+    <div class="description">
+      <h3>{{ page.excerpt }}</h3>
+      <hr/>
+      {{ content }}
+    </div>
+    
 	</div>

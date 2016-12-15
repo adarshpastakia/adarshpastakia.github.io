@@ -9,11 +9,12 @@
 // @copyright   : 2017
 // @license     : MIT
 
-$primary: #3E1B3E;
+$primary: #572957;
 $secondary: #9E0F59;
 
 $white: #FFFEFC;
 $black: #1B1C1D;
+@import "hilights";
 
 body.pushable,
 html {
@@ -39,6 +40,97 @@ html {
 
 .text-muted {
   color: #808080;
+}
+
+hr {
+  -webkit-transform: scaleY(.5);
+  -moz-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+
+.post-detail {
+  font-weight: 300;
+  padding: 2rem 1rem;
+  
+  h1.post-title {
+    line-height: 1;
+    margin: 0;
+    font-size: 2.5rem;
+    color: $primary;
+  }
+  
+  .meta {
+    font-weight: 600;
+    color: #808080;
+    font-size: 1rem;
+    line-height: 5rem;
+  }
+  
+  .description {
+    font-size: 1.5em !important;
+    line-height: 2 !important;
+    p {
+      font-size: 1.2rem !important;
+      line-height: 2 !important;
+    }
+    pre {
+      padding: .7em 1em;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+
+  }
+}
+
+.card.fluid .item {
+  padding-right: 2rem;
+  h1 {
+    font-weight: 300;
+    color: $primary;
+  }
+  .description p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+}
+
+.post-excerpt {
+  font-weight: 300;
+  padding: 2rem 1rem;
+  
+  h1.post-title {
+    line-height: 1;
+    margin: 0;
+    font-size: 2rem;
+    color: $primary;
+  }
+  
+  .meta {
+    font-weight: 600;
+    color: #808080;
+    font-size: 1rem;
+    line-height: 3rem !important;
+  }
+  
+  .description {
+    font-size: 1.2em !important;
+    line-height: 2 !important;
+    
+    hr {
+      transform: scaleY(.5);
+    }
+    p {
+      font-size: 1.2rem !important;
+      line-height: 2 !important;
+    }
+    pre {
+      padding: .7em 1em;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+
+  }
 }
 
 .masthead.inverted.segment {

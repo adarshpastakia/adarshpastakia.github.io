@@ -4,22 +4,22 @@ layout: default
 ---
 
 <!-- Main -->
-	<div id="main">
-		<div id="content" class="container">
+	<div class="ui container">
+    <br/>
+		<div class="ui items">
 			{% for post in site.posts offset: 0 limit: 8 %}
-			<div class="row">
-				<section class="8u -2u">
-					<!-- <a href="{{ site.prefix }}{{ post.url }}" class="image full"><img src="/assets/{{ post.featured }}" alt=""></a> -->
-					<header>
-						<h3>{{ post.title }}</h3>
-						<div class="post-date">
-					    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m/%d/%y" }}</time>
-					  </div>
-					</header>
-					<div class="post-excerpt">{{ post.excerpt }}</div>
-					<a href="{{ site.prefix }}{{ post.url }}" class="button button-style5">Read More</a>
-				</section>
-			</div>
+			<div class="item">
+        <div class="content post-excerpt">
+          <h1 class="post-title"><a class="header thin" href="{{ site.prefix }}{{ post.url }}">{{ post.title }}</a></h1>
+          <div class="meta">
+            Posted on &#x1F558; <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          </div>
+          <div class="description">
+            <p>{{ post.excerpt }}</p>
+          </div>
+        </div>
+      </div>
+      <hr/>
 			{% endfor %}
 		</div>
 	</div>

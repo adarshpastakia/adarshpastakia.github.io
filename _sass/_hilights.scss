@@ -1,0 +1,15 @@
+.language-scss {
+  position: relative;
+
+  &:after {
+    content      : 'SCSS';
+    font-size    : .5em;
+    background   : #4A706A;
+    color        : #fff;
+    padding      : .3em .8em;
+    position     : absolute;
+    top          : 0;
+    right        : 0;
+    border-radius: 0 0 0 4px;
+  }
+}
