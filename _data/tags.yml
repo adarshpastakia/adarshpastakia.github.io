@@ -12,13 +12,33 @@
 # ~~~
 
 aurelia:
+  category: Framework
   name: Aurelia
-  color: '#E62F87'
+  color: E62F87
+  home: https://aurelia.io
   description: >
     Aurelia JavaScript Framework
 
 typescript:
+  category: Code
   name: TypeScript
-  color: '#949667'
+  color: 1971A3
+  home: https://www.typescriptlang.org
   description: >
     JavaScript is TypeScript
+
+sass:
+  category: Code
+  name: Sass
+  color: CD669A
+  home: https://www.sass-lang.com
+  description: >
+    CSS with superpowers
+
+auf:
+  category: Framework
+  name: Aurelia UI Framework
+  color: 522B56
+  home: https://adarshpastakia.github.io/aurelia-ui-framework/
+  description: >
+    A bespoke UI Framework built on Aurelia for desktop business application

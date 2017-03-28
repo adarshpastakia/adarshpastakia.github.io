@@ -1,0 +1,11 @@
+{% assign current = page.url | downcase | split : '/' %}
+<nav>
+  <div class="container">
+    <img class="nav-logo" src="/assets/images/photo.jpg"/>
+    <div class="nav-title">{{ site.name}}<small>{{ site.description }}</small></div>
+    <div class="filler"></div>
+    <a class='nav-item' href="/" {% if page.url == '/' %} data-active='true' {% endif %}>Blog</a>
+    <a class='nav-item' href="/projects" {% if current[1] == 'projects' %} data-active='true' {% endif %}>Projects</a>
+    <a class='nav-item' href="/about" {% if current[1] == 'about' %} data-active='true' {% endif %}>About</a>
+  </div>
+</nav>

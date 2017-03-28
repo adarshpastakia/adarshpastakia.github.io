@@ -1,0 +1,46 @@
+.post-item {
+  padding: 0 1rem;
+
+  hr {
+    margin: .25em 1rem;
+  }
+
+  &.listing {
+    padding: 2rem 1rem;
+  }
+
+  .post-title {
+    color: $theme;
+    font-weight: 400;
+    font-size: 1.5em;
+  }
+
+
+  .post-time {
+    color: gray;
+    font-weight: 300;
+  }
+  .post-tags {
+    padding: .5em 0;
+  }
+
+  .post-excerpt {
+    margin-top: 1em;
+    font-size: 1.2em;
+  }
+}
+
+a.tag-link {
+  white-space: nowrap;
+  margin: .5em 1em .5em 0;
+  border-radius: 1em;
+  font-size: .7rem;
+  display: inline-block;
+}
+
+.no-posts {
+  font-size: 1.5em;
+  padding: 1em 0;
+  text-align: center;
+  color: silver;
+}

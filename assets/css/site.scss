@@ -1,222 +1,190 @@
---- 
-# this ensures Jekyll reads the file to be transformed into CSS later 
-# only Main files contain this front matter, not partials. 
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
 ---
 
-// 
-// @description : 
-// @author      : Adarsh Pastakia
-// @copyright   : 2017
-// @license     : MIT
+$theme: #842855;
+$hilight: #522B56;
+@import "hljs";
+@import "post";
+@import "project";
 
-$primary: #572957;
-$secondary: #9E0F59;
+*::selection,
+*:after::selection,
+*:before::selection {
+  background: lighten(desaturate($theme, 20%), 20%);
+  color     : white;
+}
 
-$white: #FFFEFC;
-$black: #1B1C1D;
-@import "hilights";
-
-body.pushable,
+body,
 html {
-  background: $black !important;
-  font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif !important;
+  margin     : 0;
+  padding    : 0;
+  font-weight: 400;
+  color      : darkslategray;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Roboto', 'Segoe UI', Arial, sans-serif;
+}
 
-  > div.pusher {
-    background: $black;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin     : 0.25em 0;
+}
 
-  a {
-    color: saturate($secondary, 30%);
-    
-    &:hover {
-      color: $secondary;
-    }
+p {
+  margin: 0.2rem 0;
+}
+
+ul {
+  list-style: circle;
+}
+
+li {
+  font-size: 1.2rem;
+  margin   : 1em 0;
+}
+
+blockquote {
+margin: 1em;
+  background   : #f0f0f0;
+  border       : 1px solid rgba(0,0,0,0.1);
+  border-radius: .2em;
+  padding      : 0.5rem 1rem;
+  font-size    : 1.2rem;
+  font-style   : italic;
+}
+
+.container {
+  position: relative;
+  margin  : 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 752px;
   }
-  
-  .thin {
-    font-weight: 300;
+}
+@media only screen and (min-width: 1024px) {
+  .container {
+    max-width: 1008px;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .container {
+    max-width: 1520px;
   }
 }
 
-.text-muted {
-  color: #808080;
+a {
+  color          : $theme;
+  text-decoration: none;
+
+  &:active,
+  &:visited {
+    color: $theme;
+  }
+
+  &:hover {
+    color: $hilight;
+  }
 }
 
 hr {
-  -webkit-transform: scaleY(.5);
-  -moz-transform: scaleY(.5);
-  transform: scaleY(.5);
+  background  : none;
+  border      : 1px solid rgba(0,0,0,.1);
+  border-width: 1px 0 0;
 }
 
-.post-detail {
-  font-weight: 300;
-  padding: 2rem 1rem;
-  
-  h1.post-title {
-    line-height: 1;
-    margin: 0;
-    font-size: 2.5rem;
-    color: $primary;
-  }
-  
-  .meta {
-    font-weight: 600;
-    color: #808080;
-    font-size: 1rem;
-    line-height: 5rem;
-  }
-  
-  .description {
-    font-size: 1.5em !important;
-    line-height: 2 !important;
-    p {
-      font-size: 1.2rem !important;
-      line-height: 2 !important;
+nav {
+  position     : fixed;
+  z-index      : 50;
+  top          : 0;
+  width        : 100%;
+  background   : white;
+  padding      : 0.5rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+
+  > .container {
+    display            : -webkit-flex;
+    display            : flex;
+    -webkit-flex-flow  : row nowrap;
+    flex-flow          : row nowrap;
+    -webkit-align-items: center;
+    align-items        : center;
+
+    > .filler {
+      -webkit-flex: 1 1 1em;
+      flex        : 1 1 1em;
     }
-    pre {
-      padding: .7em 1em;
-      font-size: 1.2rem;
-      line-height: 1.8rem;
+  }
+
+  .nav-title {
+    color    : #555;
+    font-size: 1.5em;
+    margin   : 0 1rem;
+
+    > small {
+      display  : block;
+      font-size: 0.5em;
+    }
+  }
+
+  .nav-logo {
+    height       : 40px;
+    border-radius: 50%;
+  }
+
+  .nav-item {
+    -webkit-flex      : 0 0 auto;
+    flex              : 0 0 auto;
+    margin            : 0 0.5rem;
+    padding           : 0.5rem 1rem;
+    border-bottom     : 2px solid transparent;
+    -webkit-transition: border-color 0.5s;
+    transition        : border-color 0.5s;
+
+    &[data-active="true"] {
+      color              : $hilight;
+      border-bottom-color: $theme;
     }
 
+    &:hover {
+      border-bottom-color: $hilight;
+    }
   }
+
 }
 
-.card.fluid .item {
-  padding-right: 2rem;
-  h1 {
-    font-weight: 300;
-    color: $primary;
-  }
-  .description p {
-  font-size: 1.2rem;
+footer {
+  text-align: center;
+  color     : silver;
+}
+
+section {
+  margin-top: 5em;
+  min-height: 30em;
+}
+
+article {
+  font-size  : 1.5em;
   line-height: 1.5;
   font-weight: 300;
 }
+
+.with-aside {
+  width  : 70%;
+  display: inline-block;
+
 }
 
-.post-excerpt {
-  font-weight: 300;
-  padding: 2rem 1rem;
-  
-  h1.post-title {
-    line-height: 1;
-    margin: 0;
-    font-size: 2rem;
-    color: $primary;
-  }
-  
-  .meta {
-    font-weight: 600;
-    color: #808080;
-    font-size: 1rem;
-    line-height: 3rem !important;
-  }
-  
-  .description {
-    font-size: 1.2em !important;
-    line-height: 2 !important;
-    
-    hr {
-      transform: scaleY(.5);
-    }
-    p {
-      font-size: 1.2rem !important;
-      line-height: 2 !important;
-    }
-    pre {
-      padding: .7em 1em;
-      font-size: 1.2rem;
-      line-height: 1.8rem;
-    }
-
-  }
-}
-
-.masthead.inverted.segment {
-  padding   : 0 0 1em 0;
-  background: $black url(../images/code2.png) no-repeat center center;
-  background-size: cover;
-
-  .ui.container.section-menu {
-    background: rgba($black, .8);
-  }
-  .ui.container {
-    background: rgba($black, .3);
-  }
-  h1.ui.header {
-    font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
-    padding     : 2rem 0 0;
-    font-size  : 4em;
-    font-weight: 300;
-    text-shadow: 2px 2px 2px $black, -2px -2px 2px $black;
-  }
-
-  h2 {
-    font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
-    padding     : .5em 0 2rem;
-    font-size  : 2em;
-    font-weight: 300;
-    text-shadow: 2px 2px 2px $black, -2px -2px 2px $black;
-  }
-}
-.page-body {
-  background: $white;
-  min-height: 500px;
-}
-.secondary.pointing.menu .toc.item {
-  display: none;
-}
-
-.ui.menu.inverted {
-  background: $primary;
-  
-  .header.item h1 {
-    font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
-    font-size: 1.5em;
-    font-weight: 300;
-    margin: 0;
-  }
-  .header.item h2 {
-    font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
-    font-size: 1em;
-    font-weight: 400;
-    margin: 0;
-  }
-}
-
-.footer.segment {
-  h4.ui.inverted.header {
-    color: #888;
-    text-align: center;
-    padding: 1em 0;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .ui.fixed.menu {
-    //display: none !important;
-  }
-
-  .secondary.pointing.menu .item,
-  .secondary.pointing.menu .menu {
-    //display: none;
-  }
-
-  .secondary.pointing.menu .toc.item {
-    //display: block;
-  }
-
-  .masthead.inverted.segment {
-
-    h1.ui.header {
-      font-size : 2em;
-      padding-top: 1em;
-    }
-
-    h2 {
-      padding-bottom: 1em;
-      font-size    : 1.2em;
-    }
-  }
+aside {
+  padding: .5em 1em;
+  width      : 20%;
+  float      : right;
+  min-height : 400px;
+  border-left: 1px solid rgba(0,0,0,.1);
+  display    : inline-block;
 }

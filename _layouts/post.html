@@ -2,28 +2,26 @@
 layout: default
 ---
 {% assign post = page %}
-{% if post.tags.size > 0 %}
-	{% capture tags_content %}on {% endcapture %}
-	{% for post_tag in post.tags %}
-		{% assign tag = site.data.tags[post_tag] %}
-		{% if tag %}
-			{% capture tags_content_temp %}{{ tags_content }}<a href="{{ site.baseurl }}/tag/{{ post_tag }}/">{{ tag.name }}</a>{% if forloop.last == false %}<span>, </span>{% endif %}{% endcapture %}
-			{% assign tags_content = tags_content_temp %}
-		{% endif %}
-	{% endfor %}
-{% else %}
-	{% assign tags_content = '' %}
-{% endif %}
-<!-- Main -->
-	<div class="ui container post-detail">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="meta">
-      Posted on &#x1F558; <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-    </div>
-    <div class="description">
-      <h3>{{ page.excerpt }}</h3>
-      <hr/>
-      {{ content }}
-    </div>
-    
-	</div>
+<div class="post-item">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-time">
+    Posted on <small>&#x1F558;</small>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+  </div>
+  <div class="post-tags">
+    {% if post.tags.size > 0 %}
+      {% for post_tag in post.tags %}
+        {% assign tag = site.data.tags[post_tag] %}
+        {% if tag %}
+        <a class="tag-link" href="{{ site.baseurl }}/tag/{{ post_tag }}/">
+          <img src="https://img.shields.io/badge/{{ tag.category }}-{{ tag.name }}-{{ tag.color }}.svg?style=flat-square"/></a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="post-excerpt">
+    <p>{{ post.excerpt }}</p>
+  </div>
+  <hr/>
+  <article>{{ content }}</article>
+</div>

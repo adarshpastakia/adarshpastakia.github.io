@@ -1,0 +1,35 @@
+.project-item {
+  display            : -webkit-flex;
+  display            : flex;
+  -webkit-flex-flow  : row wrap;
+  flex-flow          : row wrap;
+  -webkit-align-items: center;
+  align-items        : center;
+  margin             : 1em 5em;
+  border             : 1px solid rgba(0,0,0,.1);
+  border-radius      : 8px;
+  overflow: hidden;
+
+  .project-logo {
+    padding: 1em;
+  }
+
+  .project-details {
+    -webkit-flex: 1 1 1em;
+    flex        : 1 1 1em;
+  }
+
+  .project-links {
+    -webkit-flex: 1 1 100%;
+    flex        : 1 1 100%;
+    padding     : 0.5em 1em;
+    background  : #fafafa;
+    border-top  : 1px solid rgba(0,0,0,.1);
+
+    text-align  : right;
+
+    a {
+      margin: 0 .2em;
+    }
+  }
+}

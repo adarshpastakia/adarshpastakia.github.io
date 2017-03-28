@@ -1,5 +1,5 @@
-name: Adarsh Pastakia
-description: A Developer's Blog
+name: A Developer's Blog
+description: by Adarsh Pastakia
 
 paginate: 10
 gems: [jekyll-paginate]

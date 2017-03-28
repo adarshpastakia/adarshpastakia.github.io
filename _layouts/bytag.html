@@ -4,39 +4,39 @@ layout: default
 
 {% assign tag = site.data.tags[page.tag] %}
 
-<div id="main">
-  <div id="content" class="container">
-    <div class="row">
-      <section class="8u -2u">
-        <!-- <a href="{{ site.prefix }}{{ page.url }}" class="image full"><img src="/assets/{{ page.featured }}" alt=""></a> -->
-        <header>
-          <h2>{{ tag.name }}<small>{{ tag.description | markdownify }}</small></h2>
-        </header>
-        <div class="post-by-tag">
-        {% if site.tags[page.tag] %}
-          {% for post in site.tags[page.tag] %}
-            {% assign currentdate = post.date | date: "%Y" %}
-            {% if currentdate != date %}
-              {% unless forloop.first %}</ul><hr/>{% endunless %}
-              <h2 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
-              <ul class="default ">
-              {% assign date = currentdate %}
-            {% endif %}
-            <li>
-              <h4>
-                <a href="{{ post.url | prepend:site.baseurl }}">
-                  <span>{{ post.title }}</span>
-                  <small>{{ post.date | date: "%m/%d" }}</small>
-                </a>
-              </h4>
-            </li>
-            {% if forloop.last %}</ul><hr/>{% endif %}
-          {% endfor %}
-        {% else %}
-            <p>There are no posts for this tag.</p>
-        {% endif %}
+
+<aside>
+  {% for sitetag in site.data.tags %}
+  <a class="tag-link" href="{{ site.baseurl }}/tag/{{ sitetag[0] }}/">
+    <img src="https://img.shields.io/badge/{{ sitetag[1].category }}-{{ sitetag[1].name }}-{{ sitetag[1].color }}.svg?style=flat-square"/></a>
+  {% endfor %}
+</aside>
+
+<content class="with-aside">
+<h2><a href="{{ tag.home }}" target="_blank">{{ tag.name }}</a></h2>
+<p>{{ tag.description }}</p>
+<hr/>
+
+{% if site.tags[page.tag] %}
+  {% for post in site.tags[page.tag] %}
+    <div class="post-item listing">
+      <h1 class="post-title">
+        <a href="{{ site.prefix }}{{ post.url }}">{{ post.title }}</a>
+      </h1>
+      <div class="post-meta">
+        <div class="post-time">
+          Posted on <small>&#x1F558;</small>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+        </div>
       </div>
-      </section>
+      <div class="post-excerpt">
+        <p>{{ post.excerpt }}</p>
+      </div>
+      <a href="{{ site.prefix }}{{ post.url }}"><small>Read More...</small></a>
     </div>
-  </div>
-</div>
+    <hr/>
+  {% endfor %}
+{% else %}
+  <p class="no-posts">There are no posts for this tag.</p>
+{% endif %}
+</content>

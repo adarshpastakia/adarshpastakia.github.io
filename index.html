@@ -1,70 +1,33 @@
---- 
-title: Home 
-layout: default 
 ---
-<div class="ui container">
-  <div class="ui internally celled grid">
-    <div class="ui row">
-      <div class="sixteen wide column">
-        <h2 class="thin">Projects</h2>
-
-        <div class="ui fluid card">
-          <div class="ui items">
-            <div class="item">
-              <div class="ui tiny image">
-                <img src="assets/images/auf-logo.png" height="64">
-              </div>
-              <div class="content">
-                <h1><a class="header thin" href="/aurelia-ui-framework" target="_blank">Aurelia UI Framework</a></h1>
-                <div class="meta">
-                  <span>A complete UI Framework for desktop business applications</span>
-                </div>
-                <div class="description">
-                  <p>A complete UI stack for business applications, built using aurelia front-end framework.
-                  Comprehensive collection of custom UI elements.</p>
-                </div>
-                <div class="extra">
-                  <!-- Place this tag where you want the button to render. -->
-                  <a
-                    class="github-button"
-                    href="https://github.com/adarshpastakia/aurelia-ui-framework"
-                    data-icon="octicon-star"
-                    data-count-href="/adarshpastakia/aurelia-ui-framework/stargazers"
-                    data-count-api="/repos/adarshpastakia/aurelia-ui-framework#stargazers_count"
-                    data-count-aria-label="# stargazers on GitHub"
-                    aria-label="Star adarshpastakia/aurelia-ui-framework on GitHub">Star</a>
-
-                  <!-- Place this tag where you want the button to render. -->
-                  <a
-                    class="github-button"
-                    href="https://github.com/adarshpastakia/aurelia-ui-framework"
-                    data-icon="octicon-eye"
-                    data-count-href="/adarshpastakia/aurelia-ui-framework/watchers"
-                    data-count-api="/repos/adarshpastakia/aurelia-ui-framework#subscribers_count"
-                    data-count-aria-label="# watchers on GitHub"
-                    aria-label="Watch adarshpastakia/aurelia-ui-framework on GitHub">Watch</a>
-
-                  <!-- Place this tag where you want the button to render. -->
-                  <a
-                    class="github-button"
-                    href="https://github.com/adarshpastakia/aurelia-ui-framework/issues"
-                    data-icon="octicon-issue-opened"
-                    data-count-href="/adarshpastakia/aurelia-ui-framework/issues"
-                    data-count-api="/repos/adarshpastakia/aurelia-ui-framework#open_issues_count"
-                    data-count-aria-label="# issues on GitHub"
-                    aria-label="Issue adarshpastakia/aurelia-ui-framework on GitHub">Issue</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+title: Home
+layout: default
+---
+{% for post in paginator.posts %}
+  <div class="post-item listing">
+    <h1 class="post-title">
+      <a href="{{ site.prefix }}{{ post.url }}">{{ post.title }}</a>
+    </h1>
+    <div class="post-meta">
+      <div class="post-time">
+        Posted on <small>&#x1F558;</small>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
       </div>
-      <!-- <div class="four wide column">
-        <div class="ui basic segment">
-          <h1 class="thin">Recent Posts</h1>
-          <h5 class="text-muted">No Posts Yet</h5>
-        </div>
-      </div> -->
     </div>
+    <div class="post-tags">
+      {% if post.tags.size > 0 %}
+      	{% for post_tag in post.tags %}
+      		{% assign tag = site.data.tags[post_tag] %}
+      		{% if tag %}
+      			<a class="tag-link" href="{{ site.baseurl }}/tag/{{ post_tag }}/">
+              <img src="https://img.shields.io/badge/{{ tag.category }}-{{ tag.name }}-{{ tag.color }}.svg?style=flat-square"/></a>
+      		{% endif %}
+      	{% endfor %}
+      {% endif %}
+    </div>
+    <div class="post-excerpt">
+      <p>{{ post.excerpt }}</p>
+    </div>
+    <a href="{{ site.prefix }}{{ post.url }}"><small>Read More...</small></a>
+    <hr/>
   </div>
-</div>
+{% endfor %}
