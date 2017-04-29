@@ -1,6 +1,7 @@
 ---
 title: Create an Aurelia Application
 layout: post
+identifier: 2017-03-28-first-post
 tags: [aurelia]
 excerpt: Create an aurelia application with aurelia-cli
 ---
@@ -16,9 +17,9 @@ excerpt: Create an aurelia application with aurelia-cli
   brew install node
   {% endhighlight %}
 
-* Install aurelia-cli and gulp-cli
+* Install aurelia-cli, gulp-cli and typings (if using typescript)
   {% highlight shell linenos %}
-  npm i -g aurelia-cli gulp-cli
+  npm i -g aurelia-cli gulp-cli typings
   {% endhighlight %}
 
 ### Create an aurelia project
