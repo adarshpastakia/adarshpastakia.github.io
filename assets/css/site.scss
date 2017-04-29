@@ -62,19 +62,35 @@ margin: 1em;
   position: relative;
   margin  : 0 auto;
 }
+.disqus-container {
+  margin: 0 auto;
+  max-width: 90%;
+}
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 752px;
+  }
+
+  .disqus-container {
+    max-width: 600px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .container {
     max-width: 1008px;
   }
+
+  .disqus-container {
+    max-width: 768px;
+  }
 }
 @media only screen and (min-width: 1536px) {
   .container {
     max-width: 1520px;
+  }
+
+  .disqus-container {
+    max-width: 1024px;
   }
 }
 
