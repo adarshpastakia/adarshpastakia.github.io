@@ -130,4 +130,6 @@ Lets test our apis routes
 
 Now we have the server running we can access the react application at `http://localhost:8080/`
 
+Checkout the sample application [here](http://mern-todo.herokuapp.com). Still under development.
+
 In Part-2 we will look at creating a database service for the ToDo application
