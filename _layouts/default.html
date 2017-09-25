@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <head lang="en">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,800italic,400,300,600,800' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/site.css" />
+{% include head.html %}
 
-    <title>{{page.title}} - {{site.name}}</title>
-  </head>
-  <body>
-    {% include head.html %}
+<body>
 
-    <section>
-      <div class="container">{{ content }}</div>
-    </section>
+   {% include header.html %}
 
-    {% include foot.html %}
+   <div class="content">
+      <div class="container">
+         {{ content }}
+      </div>
+   </div><!-- end .content -->
 
-  </body>
+   {% include footer.html %}
+   {% include scripts.html %}
+
+</body>
+
 </html>

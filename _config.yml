@@ -1,8 +1,26 @@
-name: A Developer's Blog
+title: A Developer' Blog
 description: by Adarsh Pastakia
 
-paginate: 10
-gems: [jekyll-paginate]
+url: http://adarshpastakia.github.io
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
 
-sass:
-    sass_dir: _sass
+markdown: kramdown
+highlighter: rouge
+gems: [jekyll-paginate]
+paginate: 5
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: Projects
+   url: /projects
+ - title: About
+   url: /about
+
+social:
+   github: adarshpastakia
+   email: adarshpastakia@outlook.com
+
+# google_analytics: "UA-58263416-1"

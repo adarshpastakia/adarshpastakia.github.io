@@ -1,29 +1,45 @@
 ---
 layout: default
 ---
-{% assign post = page %}
-<div class="post-item">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <div class="post-time">
-    Posted on <small>&#x1F558;</small>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-  </div>
-  <div class="post-tags">
-    {% if post.tags.size > 0 %}
-      {% for post_tag in post.tags %}
+<div class="post">
+  {% if page.image %}
+    <div class="featuredImage">
+        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.image }}" alt="" />
+      </div>
+  {% endif %}
+  <h1 class="postTitle">{{ page.title }}</h1>
+  <p class="meta"><small>&#x1F558;</small> {{ page.date | date: '%B %d, %Y' }} | <span class="time">{{ page.content | number_of_words | divided_by:180 }}</span> Minute Read</p>
+
+
+  <div class="post-tags" style="text-align: center">
+    {% if page.tags.size > 0 %}
+      {% for post_tag in page.tags %}
         {% assign tag = site.data.tags[post_tag] %}
         {% if tag %}
-        <a class="tag-link" href="{{ site.baseurl }}/tag/{{ post_tag }}/">
+        <a class="tag-link">
           <img src="https://img.shields.io/badge/{{ tag.category }}-{{ tag.name }}-{{ tag.color }}.svg?style=flat-square"/></a>
         {% endif %}
       {% endfor %}
     {% endif %}
   </div>
-  <div class="post-excerpt">
-    <p>{{ post.excerpt }}</p>
+
+  {{ content }}
+
+  <!-- POST NAVIGATION -->
+  <div class="postNav clearfix">
+    {% if page.previous.url %}
+      <a class="prev{% if page.previous.image %} image{% endif %}" href="{{ page.previous.url | prepend: site.baseurl }}"><span>&laquo;&nbsp;{{ page.previous.title }}</span>
+      {% if page.previous.image %}
+        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.previous.image }}" alt="">
+      {% endif %}
+    </a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="next{% if page.next.image %} image{% endif %}" href="{{ page.next.url | prepend: site.baseurl }}"><span>{{ page.next.title }}&nbsp;&raquo;</span>
+      {% if page.next.image %}
+        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.next.image }}" alt="">
+      {% endif %}
+      </a>
+    {% endif %}
   </div>
-  <hr/>
-  <article>{{ content }}</article>
-  <hr/>
-  {% include disq.html %}
 </div>

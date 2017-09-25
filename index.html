@@ -1,33 +1,26 @@
 ---
-title: Home
 layout: default
+title: A Developer' Blog
 ---
-{% for post in paginator.posts %}
-  <div class="post-item listing">
-    <h1 class="post-title">
-      <a href="{{ site.prefix }}{{ post.url }}">{{ post.title }}</a>
-    </h1>
-    <div class="post-meta">
-      <div class="post-time">
-        Posted on <small>&#x1F558;</small>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-      </div>
-    </div>
-    <div class="post-tags">
-      {% if post.tags.size > 0 %}
-      	{% for post_tag in post.tags %}
-      		{% assign tag = site.data.tags[post_tag] %}
-      		{% if tag %}
-      			<a class="tag-link" href="{{ site.baseurl }}/tag/{{ post_tag }}/">
-              <img src="https://img.shields.io/badge/{{ tag.category }}-{{ tag.name }}-{{ tag.color }}.svg?style=flat-square"/></a>
-      		{% endif %}
-      	{% endfor %}
-      {% endif %}
-    </div>
-    <div class="post-excerpt">
-      <p>{{ post.excerpt }}</p>
-    </div>
-    <a href="{{ site.prefix }}{{ post.url }}"><small>Read More...</small></a>
-    <hr/>
+
+<div class="home" id="home">
+  <h1 class="pageTitle">Recent Posts</h1>
+  <ul class="posts noList">
+    {% for post in paginator.posts %}
+      <li>
+        <span class="date"><small>&#x1F558;</small> {{ post.date | date: '%B %d, %Y' }}</span>
+        <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+        <p class="description">{% if post.description %}{{ post.description | strip_html | strip_newlines | truncate: 250 }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 250 }}{% endif %}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  <!-- Pagination links -->
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous button__outline">Newer Posts</a>
+    {% endif %}
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next button__outline">Older Posts</a>
+    {% endif %}
   </div>
-{% endfor %}
+</div>

@@ -11,6 +11,22 @@
 #     *My Tag* is an example of how to define a custom tag.
 # ~~~
 
+nodejs:
+  category: Framework
+  name: NodeJs
+  color: 53A937
+  home: https://nodejs.org
+  description: >
+    Build application servers using JavaScript
+
+reactjs:
+  category: Framework
+  name: ReactJS
+  color: 02C2FF
+  home: https://reactjs.com
+  description: >
+    ReactJS Frontend Framework by Facebook
+
 aurelia:
   category: Framework
   name: Aurelia
@@ -18,6 +34,13 @@ aurelia:
   home: https://aurelia.io
   description: >
     Aurelia JavaScript Framework
+
+es6:
+  category: Code
+  name: Javascript
+  color: 800020
+  description: >
+    JavaScript
 
 typescript:
   category: Code
