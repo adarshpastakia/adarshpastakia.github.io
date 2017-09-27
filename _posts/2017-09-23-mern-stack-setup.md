@@ -4,6 +4,7 @@ title:  "MERN Stack Application - Part 1"
 description: "Pre-Requisites and Tools - This post will describe the steps for setting up and deploying a MERN stack application."
 date:   2017-09-23
 tags: [nodejs,reactjs,es6]
+publish: true
 
 mongo-install: https://docs.mongodb.com/manual/installation/
 express-security: https://expressjs.com/en/advanced/best-practice-security.html

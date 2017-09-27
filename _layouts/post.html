@@ -34,7 +34,7 @@ layout: default
       {% endif %}
     </a>
     {% endif %}
-    {% if page.next.url %}
+    {% if page.next.url and page.next.publish %}
       <a class="next{% if page.next.image %} image{% endif %}" href="{{ page.next.url | prepend: site.baseurl }}"><span>{{ page.next.title }}&nbsp;&raquo;</span>
       {% if page.next.image %}
         <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.next.image }}" alt="">

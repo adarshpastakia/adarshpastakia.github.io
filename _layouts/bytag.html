@@ -19,6 +19,7 @@ layout: default
 
 {% if site.tags[page.tag] %}
   {% for post in site.tags[page.tag] %}
+  {% if post.publish %}
     <div class="post-item listing">
       <h1 class="post-title">
         <a href="{{ site.prefix }}{{ post.url }}">{{ post.title }}</a>
@@ -35,6 +36,7 @@ layout: default
       <a href="{{ site.prefix }}{{ post.url }}"><small>Read More...</small></a>
     </div>
     <hr/>
+    {% endif %}
   {% endfor %}
 {% else %}
   <p class="no-posts">There are no posts for this tag.</p>
