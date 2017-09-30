@@ -26,5 +26,10 @@ title: Projects
 			</p>
       <p class="description">A bespoke UI Framework built on Aurelia for desktop business application</p>
     </li>
+
+		<li>
+			<h3><a class="post-link" href="http://adarshpastakia.github.io/mern-todo/" target="_blank">ToDo Application</a></h3>
+			<p class="description">A ToDo application built using the MERN stack. (MongoDB + Express + ReactJS + NodeJS)</p>
+		</li>
   </ul>
 </div>

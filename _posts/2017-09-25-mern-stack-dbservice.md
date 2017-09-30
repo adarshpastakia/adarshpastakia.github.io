@@ -92,6 +92,17 @@ class UsersModel extends DbService {
 }
 ```
 
-To learn about the MongoDB collection methods [read here](http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html).
+To use a MongoDB cloud service try [mLab](https://mlab.com), they provide free databases as well as paid service.
 
 In Part-3 we will look at creating the express api service for the ToDo application
+
+---
+
+
+##### Further Reading
+
+[MongoDB Getting Started](https://mongodb.github.io/node-mongodb-native/api-articles/nodekoarticle1.html)
+
+[MongoDB Docs](http://mongodb.github.io/node-mongodb-native/2.2/api/)
+
+[MongoDB on W3Schools](https://www.w3schools.com/nodejs/nodejs_mongodb.asp)

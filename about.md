@@ -1,23 +1,21 @@
 ---
-layout: default
+layout: article
 title: About Me
+image: dsotm.png
 ---
 
-<div class="post">
-	<h1 class="pageTitle">About Me</h1>
-	<p class="intro">TODO</p>
-	<!-- <p>Long Haul was created in honor of all the hard working touring bicycles that have traversed the globe time and time again. Take it for a spin.</p>
-	<h2>Features</h2>
-	<ul>
-		<li>Built with SASS + GULP + BROWSERSYNC + AUTOPREFIXER</li>
-  		<li>SVG Social Icons from <a href="http://customizr.net/icons/">Customizr</a></li>
-  		<li><a href="http://responsive-nav.com/">Responsive Nav Menu</a></li>
-  		<li><a href="https://github.com/snaptortoise/jekyll-rss-feeds">XML Feed for RSS Readers</a></li>
-  		<li>Contact Form via <a href="http://formspree.io/">Formspree</a></li>
-      <li>5 Post Loop with excerpt on Home Page</li>
-  		<li>Previous / Next Post Navigation</li>
-      <li>Estimated Reading Time for posts</li>
-  		<li><a href="https://github.com/adobe-webplatform/dropcap.js">Drop Cap</a> on posts</li>
-  		<li><a href="http://typecast.com/blog/a-more-modern-scale-for-web-typography">A Better Type Scale</a></li>
-  	</ul> -->
-</div>
+<p class="intro"><span class="dropcap">I</span>n a nutshell, &ldquo;a Pink Floyd nut in love with coffee&rdquo;. Having tried most of everything from databases to networking, spent a decade learning, developing and working on web application development specifically on UI/UX.</p>
+
+<blockquote><div style="text-align: center">All you touch and all you see,<br/>is all your life will ever be.</div>
+	<cite>- Pink Floyd</cite>
+</blockquote>
+
+Been learning programming for 22 years and am still at it, the learning never ends. :)
+
+The journey from FoxPro to Visual Basic and Java Swing, and now the labyrinth of JavaScript Frontend Frameworks. From Prototype to jQuery, YUI to ExtJS and to the modern days of Angular and React, and not to forget the one I love most __Aurelia__.
+
+From making data-entry forms and reports on a character-based interface to DHTML (apparently named DynamicHTML) and into the modern day of intuitive UI/UX designs and ever complex world of business applications.
+
+<blockquote><div style="text-align: center">There is no dark side of the moon really.<br/>Matter of fact its all dark...</div>
+	<cite>- Pink Floyd</cite>
+</blockquote>

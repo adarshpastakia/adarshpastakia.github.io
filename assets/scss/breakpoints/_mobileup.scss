@@ -237,10 +237,11 @@ POST STYLING
 
   blockquote {
     clear      : both;
-    margin     : 2.5em 0;
+    margin     : 2.5em auto;
     padding    : 0;
     line-height: 1.8;
     position   : relative;
+    max-width  : 90%;
 
     &:before {
       content   : '';
@@ -303,8 +304,11 @@ POST STYLING
   }
 
   .featuredImage {
-    position  : relative;
-    margin-top: 2rem;
+    position           : relative;
+    margin-top         : 2rem;
+    height             : 15em;
+    background-size    : cover;
+    background-position: center;
 
     img {
       margin-bottom: 0;

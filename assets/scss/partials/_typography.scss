@@ -130,6 +130,13 @@ blockquote {
   }
 }
 
+cite {
+  display   : block;
+  font-size : 0.8em;
+  color     : $subtle-color;
+  text-align: right;
+}
+
 .note {
   background: rgba($primary-color, .1);
   border    : 1px solid rgba($primary-color, .5);

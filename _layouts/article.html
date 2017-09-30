@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="post">
+  {% if page.image %}
+    <div class="featuredImage" style="background-image: url({{ '/assets/img/' | prepend: site.baseurl | append: page.image }})">
+      </div>
+  {% endif %}
+  <h1 class="postTitle">{{ page.title }}</h1>
+  <p></p>
+
+  {{ content }}
+
+</div>
